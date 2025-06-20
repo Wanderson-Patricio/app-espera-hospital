@@ -37,6 +37,7 @@ const updateVideo = (url) => {
   const currentSrc = videoElement.src;
   const newSrc = formatVideoUrl(url);
   if (currentSrc !== newSrc) {
+    console.log(`Atualizando vídeo de ${currentSrc} para ${newSrc}`);
     videoElement.src = newSrc;
   }
 };
