@@ -17,19 +17,16 @@ body {
 
 #header {
   grid-area: 1 / 1 / 3 / 15;
-  /* border: 1px solid red; */
 }
 
 #logo-container {
   grid-area: 1 / 15 / 3 / 19;
   display: flex;
   justify-content: center;
-  /* border: 1px solid red; */
 }
 
 #current-patient-container {
   grid-area: 3 / 1 / 12 / 6;
-  /* border: 1px solid red; */
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -42,17 +39,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid red; */
 }
 
-#last-called-info {
+.info {
   grid-area: 12 / 1 / 14 / 5;
-  /* border: 1px solid red; */
 }
 
 #last-called-container {
   grid-area: 12 / 5 / 14 / 19;
-  border: 1px solid red;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(1, 1fr);
@@ -60,49 +54,57 @@ body {
   grid-row-gap: 0px;
 }
 
-.last-called-name{
-    border: 1px solid black;
+#hospital-name {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 54pt;
 }
 
-#hospital-name{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 54pt;
+#hospital-logo {
+  height: 100%;
 }
 
-#hospital-logo{
-    height: 100%;
+#video {
+  height: 100%;
+  aspect-ratio: 16 / 9;
 }
 
-#video{
-    height: 100%;
-    aspect-ratio: 16 / 9;
+.chamada {
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.chamada{
-    border: 1px solid white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.title {
+  font-size: 36pt;
+  height: 20%;
+  margin-top: 10px;
 }
 
-.title{
-    font-size: 36pt;
-    height: 20%;
-    margin-top: 10px;
+.value {
+  font-size: 118pt;
+  height: 80%;
+  margin-top: 10px;
 }
 
-.value{
-    font-size: 118pt;
-    height: 80%;
-    margin-top: 10px;
+.last-called {
+  font-size: 38pt;
+  margin-left: 15px;
 }
 
-#last-called-info p{
-    font-size: 28pt;
-    margin-left: 15px;
-    margin-top: 8px;
+.last-called p {
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.name {
+  height: 100%;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-self: start;
 }
