@@ -1,14 +1,7 @@
-:root {
-  --columns: 18;
-  --rows: 13;
-  --background-color: #0052a6;
-}
-
 body {
-  background-color: var(--background-color);
   display: grid;
-  grid-template-columns: repeat(var(--columns), 1fr);
-  grid-template-rows: repeat(var(--rows), 1fr);
+  grid-template-columns: repeat(18, 1fr);
+  grid-template-rows: repeat(13, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   height: 100vh;

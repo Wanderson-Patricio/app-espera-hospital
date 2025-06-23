@@ -6,11 +6,12 @@
  * A Promise será rejeitada se houver um erro na requisição (por exemplo, arquivo não encontrado,
  * problemas de rede ou JSON inválido).
  */
-const loadData = async () => {
-  const dataPath = "../data/data.json";
-  const response = await fetch(dataPath);
-  const data = await response.json();
-  return data;
+const loadData = () => {
+  // const dataPath = "../data/data.json";
+  // const response = await fetch(dataPath);
+  // const data = await response.json();
+  // return data;
+  return JSON.parse(localStorage.getItem("root"));
 };
 
 /**
@@ -37,7 +38,6 @@ const updateVideo = (url) => {
   const currentSrc = videoElement.src;
   const newSrc = formatVideoUrl(url);
   if (currentSrc !== newSrc) {
-    console.log(`Atualizando vídeo de ${currentSrc} para ${newSrc}`);
     videoElement.src = newSrc;
   }
 };
@@ -104,13 +104,9 @@ const updateLastCalled = (lastCalled) => {
  * Este intervalo continuará a ser executado indefinidamente até que seja explicitamente parado
  * com `clearInterval()`.
  */
-const PatientInterval = setInterval(async () => {
-  const data = await loadData();
+const PatientInterval = setInterval(() => {
+  const data = loadData();
   callNewPatient(data.senha.atual.senha, data.senha.atual.guiche);
   updateLastCalled(data.senha.passadas);
-}, 1000);
-
-const VideoInterval = setInterval(async () => {
-  const data = await loadData();
   updateVideo(data.video.url);
 }, 1000);

@@ -1,0 +1,29 @@
+body{
+    height: 95vh;
+}
+
+#header {
+  height: 100px;
+}
+
+#back-div {
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 100%;
+  width: 50px;
+}
+
+#back-div:hover {
+  cursor: pointer;
+}
+
+#back-image {
+  height: 50%;
+}
+
+#content {
+  height: calc(100% - 100px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
