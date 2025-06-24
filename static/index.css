@@ -1,0 +1,47 @@
+#header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1{
+    color: white;
+    font-size: 32pt;
+}
+
+#options-container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 24pt;
+}
+
+.button-div{
+    width: 200px;
+    height: 200px;
+}
+
+.button-div:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.button-image{
+    width: 100%;
+}
+
+.button-subtitle{
+    margin-top: 10px;
+}

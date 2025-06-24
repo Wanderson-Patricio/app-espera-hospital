@@ -2,7 +2,6 @@ const setLocalStorage = () => {
   localStorage.setItem(
     "root",
     JSON.stringify({
-      isFirstLogin: false,
       video: {
         url: "",
       },
@@ -32,12 +31,18 @@ const setLocalStorage = () => {
 
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  const isFirstLogin = JSON.parse(
-    localStorage.getItem('root')
-  ).isFirstLogin
+const goTo = (endpoint) => {
+  const url = `templates/${endpoint}.html`
+  if(endpoint === 'chamada') window.open(url, '_blank')
+  else location.href = url
+}
 
-  if(isFirstLogin === undefined || isFirstLogin){
+document.addEventListener("DOMContentLoaded", () => {
+  const root = JSON.parse(
+    localStorage.getItem('root')
+  )
+  
+  if(root === null){
     setLocalStorage()
   }
 });

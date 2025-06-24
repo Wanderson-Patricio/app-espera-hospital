@@ -3,12 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./static/reset.css">
+    <title>Página Inicial</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./static/reset.css" />
+    <link rel="stylesheet" href="./static/baseContent.css" />
+    <link rel="stylesheet" href="./static/index.css" />
   </head>
   <body>
-    <h1>Página Inicial</h1>
-
+    <div id="header">
+      <h1>Página Inicial</h1>
+    </div>
+    <div id="content">
+      <div id="options-container">
+        <div class="option">
+          <div class="button-div" onclick="goTo('newPatient')">
+            <img class="button-image" src="./assets/add-user.png" alt="" srcset="" />
+          </div>
+          <div class="button-subtitle">Adicionar Paciente</div>
+        </div>
+        <div class="option">
+          <div class="button-div" onclick="goTo('nextPatient')">
+            <img class="button-image" src="./assets/next.png" alt="" srcset="" />
+          </div>
+          <div class="button-subtitle">Chamar Próximo Paciente</div>
+        </div>
+        <div class="option">
+          <div class="button-div" onclick="goTo('listAllPatients')">
+            <img class="button-image" src="./assets/list.png" alt="" srcset="" />
+          </div>
+          <div class="button-subtitle">Listar todos os pacientes</div>
+        </div>
+        <div class="option">
+          <div class="button-div" onclick="goTo('chamada')">
+            <img class="button-image" src="./assets/new-tab.png" alt="" srcset="" />
+          </div>
+          <div class="button-subtitle">Abrir Tela de chamada</div>
+        </div>
+        <div class="option">
+          <div class="button-div" onclick="goTo('updateVideo')">
+            <img class="button-image" src="./assets/youtube.png" alt="" srcset="" />
+          </div>
+          <div class="button-subtitle">Atualizar Vídeo</div>
+        </div>
+        <div class="option">
+          <div class="button-div" onclick="goTo('report')">
+            <img class="button-image" src="./assets/report.png" alt="" srcset="" />
+          </div>
+          <div class="button-subtitle">Gerar Relatórios</div>
+        </div>
+      </div>
+    </div>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
