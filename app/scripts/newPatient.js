@@ -1,15 +1,11 @@
 const tratarDados = (dados) => {
-  const { rua, numero, complemento, telefone, email, ...restante } = dados;
+  const { rua, numero, complemento, ...restante } = dados;
 
   const dadosTratados = {
     endereco: {
       rua,
       numero,
       complemento,
-    },
-    contato: {
-      telefone,
-      email,
     },
     ...restante,
   };
@@ -31,7 +27,6 @@ const getDadosPaciente = () => {
     "cidade",
     "estado",
     "cep",
-    "prioridade",
     "observacoes",
   ];
 
@@ -43,12 +38,26 @@ const getDadosPaciente = () => {
   return tratarDados(dados);
 };
 
-document.getElementById("formulario").addEventListener("submit", (event) => {
-  event.preventDefault();
+document
+  .getElementById("formulario")
+  .addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const dados = getDadosPaciente();
 
-  const dadosPaciente = getDadosPaciente();
-  alert(JSON.stringify(dadosPaciente));
-
-
-  
-});
+    await fetch("http://localhost:3000/api/pacientes", {
+      method: "POST",
+      body: dados,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Erro na requisição: " + response.status);
+        }
+        return response.json(); // Converte a resposta em JSON
+      })
+      .then((data) => {
+        alert("Paciente cadastrado com sucesso:", data);
+      })
+      .catch((error) => {
+        alert("Erro:", error);
+      });
+  });
